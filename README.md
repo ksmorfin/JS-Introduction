@@ -1,3 +1,4 @@
 # Introducción a JavaScript
 
-Repositorio para practicar tipos de datos en JavaScript.
+Modulo 3: Introduccion a Java Script
+Repositorio para practicar ejercicios de clase.
