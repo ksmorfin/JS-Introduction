@@ -25,7 +25,7 @@ let book = {   // Aqui comienzas a crear un objeto, un objeto siempre va entre l
 };
 
 book.addchapter("Chapter 1");
-book.addchapter("chapter 2");
+book.addchapter("Chapter 2");
 
 book.infobook();
 console.log(book.chapters);
