@@ -1,37 +1,58 @@
-console.log("JS cargado");
+console.log("JS cargado correctamente");
 
-document.addEventListener("DOMContentLoaded", () => {
+const fetchBtn = document.getElementById("fetch-btn");
+const axiosBtn = document.getElementById("axios-btn");
+const container = document.getElementById("data-container");
 
-    const fetchBtn = document.getElementById("fetch-btn");
-    const axiosBtn = document.getElementById("axios-btn");
-    const container = document.getElementById("data-container");
+function displayCharacters(characters) {
 
-    function displayCharacters(characters) {
+    container.innerHTML = "";
 
-        container.innerHTML = "";
+    characters.forEach(character => {
 
-        characters.forEach(c => {
-            container.innerHTML += `
-                <div>
-                    <h3>${c.name}</h3>
-                    <img src="${c.image}" width="150">
-                </div>
-            `;
-        });
-    }
+        container.innerHTML += `
+            <div>
+                <h3>${character.name}</h3>
+                <img src="${character.image}" width="200" alt="${character.name}">
+            </div>
+        `;
+    });
+}
 
-    async function getFetch() {
-        const res = await fetch("https://api.sampleapis.com/simpsons/characters");
-        const data = await res.json();
+// FETCH
+async function getWithFetch() {
+
+    try {
+
+        const response = await fetch(
+            "https://api.sampleapis.com/simpsons/characters"
+        );
+
+        const data = await response.json();
+
         displayCharacters(data);
+
+    } catch (error) {
+        console.log("Fetch error:", error);
     }
+}
 
-    async function getAxios() {
-        const res = await axios.get("https://api.sampleapis.com/simpsons/characters");
-        displayCharacters(res.data);
+// AXIOS
+async function getWithAxios() {
+
+    try {
+
+        const response = await axios.get(
+            "https://api.sampleapis.com/simpsons/characters"
+        );
+
+        displayCharacters(response.data);
+
+    } catch (error) {
+        console.log("Axios error:", error);
     }
+}
 
-    fetchBtn.addEventListener("click", getFetch);
-    axiosBtn.addEventListener("click", getAxios);
-
-});
+// EVENTS
+fetchBtn.addEventListener("click", getWithFetch);
+axiosBtn.addEventListener("click", getWithAxios);
