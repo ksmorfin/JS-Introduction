@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Event Registration</h1>
+
+        <form id="eventForm">
+
+            <!-- Full Name -->
+            <label>Full Name</label>
+            <input type="text" id="name" placeholder="e.g. John Doe">
+
+            <!-- Email -->
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="example@email.com">
+
+            <!-- Phone -->
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="10 digits">
+
+            <!-- Interests -->
+            <label>Interests</label>
+            <div>
+                <input type="checkbox" name="interest" value="technology"> Technology
+                <input type="checkbox" name="interest" value="business"> Business
+                <input type="checkbox" name="interest" value="health"> Health
+            </div>
+
+            <!-- Schedule -->
+            <label>Preferred Schedule</label>
+            <div>
+                <input type="radio" name="schedule" value="morning"> Morning
+                <input type="radio" name="schedule" value="afternoon"> Afternoon
+                <input type="radio" name="schedule" value="evening"> Evening
+            </div>
+
+            <!-- Date -->
+            <label>Event Date</label>
+            <input type="date" id="date">
+
+            <!-- File -->
+            <label>Identification (optional)</label>
+            <input type="file" id="file">
+
+            <button type="submit">Register</button>
+
+            <p id="message"></p>
+
+        </form>
+    </div>
+
+    <script src="script3.js"></script>
+</body>
+
+</html>
