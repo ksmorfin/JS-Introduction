@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zod Form Validation</title>
+    <link rel="stylesheet" href="style4.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Register Form</h1>
+
+        <form id="registerForm">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" />
+                <small class="error" id="nameError"></small>
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="text" id="email" />
+                <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" />
+                <small class="error" id="passwordError"></small>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <!-- Zod CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/zod@3.23.8/lib/index.umd.min.js"></script>
+
+    <script src="script4.js"></script>
+</body>
+
+</html>
